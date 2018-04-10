@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class BankTest {
+	private static Bank bank;
+    private final static String NAME = "TestBank";
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,10 +22,12 @@ public class BankTest {
 
 	@Before
 	public void setUp() throws Exception {
+		bank = new Bank(NAME);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		bank = null;
 	}
 
 	@Test
