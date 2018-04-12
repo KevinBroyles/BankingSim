@@ -21,6 +21,7 @@ public class CustomerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		Bank FirstBank = new Bank("First Bank");
 	}
 
 	@After
@@ -28,40 +29,26 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
+	public void testCustomerNotNull() {
+		Customer testCust = new Customer(FirstBank, "Jones", "Sue");
+		assertNotNull(testCust);
 	}
 
-	@Test
-	public void testCustomer() {
-		fail("Not yet implemented");
+	@Test(expected=Exception.class)
+	public void testCustomerNoBank() {
+		Customer testCust = new Customer("Jones", "Sue");
 	}
 
-	@Test
-	public void testGetBank() {
-		fail("Not yet implemented");
+	@Test(expected=Exception.class)
+	public void testCustomerNoLastName() {
+		Customer testCust = new Customer(FirstBank, , "Sue");
 	}
 
-	@Test
-	public void testGetCustomerId() {
-		fail("Not yet implemented");
+	@Test(expected=Exception.class)
+	public void testCustomerFirstName() {
+		Customer testCust = new Customer(FirstBank, "Jones");
 	}
-
-	@Test
-	public void testGetLastName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetFirstName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetCustomerAccounts() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testYtdFees() {
 		fail("Not yet implemented");
@@ -79,81 +66,6 @@ public class CustomerTest {
 
 	@Test
 	public void testRemoveAccount() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetAccount() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEqualsObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCompareTo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEqualsObject1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
 		fail("Not yet implemented");
 	}
 
