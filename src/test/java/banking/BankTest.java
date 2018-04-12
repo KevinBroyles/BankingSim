@@ -56,7 +56,20 @@ public class BankTest {
 
 	@Test
 	public void testSetInsufficientFundsPenalty() {
-		fail("Not yet implemented");
+		// Testing if bank.setInsufficientFundsPenalty() changes the insufficient funds penalty 
+		
+		// Old InsufficientFundsPenalty, in dollars
+		double oldFundsPenalty = bank.getInsufficientFundsPenalty();
+		// New InsufficientFundsPenalty, in dollars
+		double newFundsPenalty = 1.00;
+		
+		// Setting the insufficient funds penalty to the new value
+		bank.setInsufficientFundsPenalty(newFundsPenalty);
+		// Setting newFundsPenalty to the new value (if it changed)
+		newFundsPenalty = bank.getInsufficientFundsPenalty();
+
+		// Determining if the insufficient funds penalty was changed
+		Assert.assertTrue(oldFundsPenalty != newFundsPenalty);
 	}
 
 	@Test
@@ -69,7 +82,21 @@ public class BankTest {
 
 	@Test
 	public void testAddAccountWizard() {
-		fail("Not yet implemented");
+		// Testing if accounts can be successfully added via the account wizard
+		
+		// Current accounts sorted set
+		SortedSet<Account> accounts = bank.getAllAccounts();
+		// Current number of accounts in the accounts sorted set
+		int oldNumberOfAccounts = accounts.size();
+		// Adding a new account from the wizard
+		bank.addAccountWizard();
+		// New accounts sorted set
+		accounts = bank.getAllAccounts();
+		// New number of accounts in the accounts sorted set
+		int newNumberOfAccounts = accounts.size();
+		
+		// Determining if the number of accounts in the accounts sorted set was changed
+		Assert.assertTrue(newNumberOfAccounts != oldNumberOfAccounts + 1);
 	}
 
 	@Test
