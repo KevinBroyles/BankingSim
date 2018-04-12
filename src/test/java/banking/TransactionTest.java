@@ -10,6 +10,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TransactionTest {
+	
+	//declare the transaction variable for all of the methods
+	private static Transaction transaction;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -21,6 +24,8 @@ public class TransactionTest {
 
 	@Before
 	public void setUp() throws Exception {
+		//creates the transaction information
+		 transaction = new Transaction(null, 0.00, "");
 	}
 
 	@After
@@ -29,31 +34,37 @@ public class TransactionTest {
 	
 	@Test
 	public void testTransaction() {
+		//tests the transaction method
 		Transaction transaction = new Transaction(null, 0.00, "");
 	}
 
 	@Test
 	public void testGetId() {
-		assertEquals(1, transaction.getId());
+		//checks to see if the getId method works properly
+		assertEquals(transaction.getId(), 1);
 	}
 
 	@Test
 	public void testGetTimestamp() {
+		//tests to make sure the timestamp is not null
 		assertNotNull(transaction.getTimestamp());
 	}
 
 	@Test
 	public void testGetType() {
+		//checks to see if the getType method works properly
 		assertEquals(transaction.getType(), null);
 	}
 
 	@Test
 	public void testGetAmount() {
-		assertEquals(0.00, transaction.getAmount());
+		//checks to see if the getAmount returns the proper value
+		assertEquals(transaction.getAmount(), 0.00);
 	}
 
 	@Test
 	public void testGetDescription() {
+		//checks to see if the getDescription displays the description of the transaction
 		assertEquals(null, transaction.getDescription());
 	}
 }
