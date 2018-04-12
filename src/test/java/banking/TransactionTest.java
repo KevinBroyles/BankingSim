@@ -26,110 +26,34 @@ public class TransactionTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testTransaction() {
-		fail("Not yet implemented");
+		Transaction transaction = new Transaction(null, 0.00, "");
 	}
 
 	@Test
 	public void testGetId() {
-		fail("Not yet implemented");
+		assertEquals(1, transaction.getId());
 	}
 
 	@Test
 	public void testGetTimestamp() {
-		fail("Not yet implemented");
+		assertNotNull(transaction.getTimestamp());
 	}
 
 	@Test
 	public void testGetType() {
-		fail("Not yet implemented");
+		assertEquals(transaction.getType(), null);
 	}
 
 	@Test
 	public void testGetAmount() {
-		fail("Not yet implemented");
+		assertEquals(0.00, transaction.getAmount());
 	}
 
 	@Test
 	public void testGetDescription() {
-		fail("Not yet implemented");
+		assertEquals(null, transaction.getDescription());
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEqualsObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCompareTo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEqualsObject1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
-		fail("Not yet implemented");
-	}
-
 }
