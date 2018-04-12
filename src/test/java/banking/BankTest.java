@@ -74,7 +74,8 @@ public class BankTest {
 
 	@Test
 	public void testGetNAME() {
-		// Testing if the String returned by the getNAME() method is null and also testing if it equals the NAME variable
+		// Testing if the String returned by the getNAME() method is null
+		// Also testing if it equals the NAME variable
 		String bankName = bank.getNAME();
 		Assert.assertNotNull(bankName);
 		Assert.assertEquals(bankName, NAME);
@@ -88,7 +89,7 @@ public class BankTest {
 		SortedSet<Account> accounts = bank.getAllAccounts();
 		// Current number of accounts in the accounts sorted set
 		int oldNumberOfAccounts = accounts.size();
-		// Adding a new account from the wizard
+		// Adding a new account from the customer wizard
 		bank.addAccountWizard();
 		// New accounts sorted set
 		accounts = bank.getAllAccounts();
@@ -96,36 +97,76 @@ public class BankTest {
 		int newNumberOfAccounts = accounts.size();
 		
 		// Determining if the number of accounts in the accounts sorted set was changed
-		Assert.assertTrue(newNumberOfAccounts != oldNumberOfAccounts + 1);
+		Assert.assertTrue(newNumberOfAccounts != oldNumberOfAccounts);
 	}
 
 	@Test
 	public void testGetAllAccounts() {
-		// Testing if the sorted set of all customers of all accounts of this bank is null
+		// Testing if the bank's sorted set of accounts returns null
 		SortedSet<Account> accounts = bank.getAllAccounts();
 		Assert.assertNotNull(accounts);
 	}
 
 	@Test
 	public void testAddCustomerWizard() {
-		fail("Not yet implemented");
+		// Testing if customers can be successfully added via the customer wizard
+		
+		// Current customers sorted set
+		SortedSet<Customer> customers = bank.getAllCustomers();
+		// Current number of customers in the customers sorted set
+		int oldNumberOfCustomers = customers.size();
+		// Adding a new customer from the customer wizard
+		bank.addCustomerWizard();
+		// New customers sorted set
+		customers = bank.getAllCustomers();
+		// New number of customers in the customers sorted set
+		int newNumberOfCustomers = customers.size();
+		
+		// Determining if the number of customers in the customers sorted set was changed 
+		Assert.assertTrue(oldNumberOfCustomers != newNumberOfCustomers);
 	}
 
 	@Test
 	public void testAddCustomer() {
-		// Testing if a new customer was added successfully
-		String customer = bank.addCustomer("lastName", "firstName");
-		Assert.assertNotNull(customer);
+		// Testing if customers can be successfully added
+		
+		// Current customers sorted set
+		SortedSet<Customer> customers = bank.getAllCustomers();
+		// Current number of customers in the customers sorted set
+		int oldNumberOfCustomers = customers.size();
+		// Adding a new customer with the name lastName, firstName
+		bank.addCustomer("lastName", "firstName");
+		// New customers sorted set
+		customers = bank.getAllCustomers();
+		// New number of customers in the customers sorted set
+		int newNumberOfCustomers = customers.size();
+		
+		// Determining if the number of customers in the customers sorted set was changed 
+		Assert.assertTrue(oldNumberOfCustomers != newNumberOfCustomers);
 	}
 
 	@Test
 	public void testRemoveCustomer() {
-		fail("Not yet implemented");
+		// Testing if customers can be successfully removed
+		
+		// Current customers sorted set
+		SortedSet<Customer> customers = bank.getAllCustomers();
+		// Current number of customers in the customers sorted set
+		int oldNumberOfCustomers = customers.size();
+		// Removing a customer with the ID of 1 from the bank
+		bank.removeCustomer("1");
+		// New customers sorted set
+		customers = bank.getAllCustomers();
+		// New number of customers in the customers sorted set
+		int newNumberOfCustomers = customers.size();
+		
+		// Determining if the number of customers in the customers sorted set was changed 
+		Assert.assertTrue(oldNumberOfCustomers != newNumberOfCustomers);
 	}
 
 	@Test
 	public void testGetAllCustomers() {
-		// Testing if the sorted set of all current customers is null
+		// Testing if the bank's sorted set of customers returns null
 		SortedSet<Customer> customers = bank.getAllCustomers();
 		Assert.assertNotNull(customers);
 		
@@ -153,63 +194,10 @@ public class BankTest {
 	}
 
 	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEquals() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		// Testing if bank.toString() returns the bank's name
+		String expected = NAME;
+		String actual = bank.toString();
+		Assert.assertEquals(expected, actual);
 	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
-		fail("Not yet implemented");
-	}
-
 }
