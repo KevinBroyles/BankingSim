@@ -10,7 +10,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CustomerTest {
-
+	
+	private Bank FirstBank;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -51,12 +53,14 @@ public class CustomerTest {
 	
 	@Test
 	public void testYtdFees() {
-		fail("Not yet implemented");
+		Customer testCust = FirstBank.getCustomer("12345");
+		assertFalse("Fees is less than 0!", 0 > testCust.ytdFees());
 	}
 
 	@Test
 	public void testYtdInterest() {
-		fail("Not yet implemented");
+		Customer testCust = FirstBank.getCustomer("12345");
+		assertFalse("Fees is less than 0!", 0 > testCust.ytdInterest());
 	}
 
 	@Test
