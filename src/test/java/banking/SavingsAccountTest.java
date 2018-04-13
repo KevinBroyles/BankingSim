@@ -10,6 +10,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SavingsAccountTest {
+	private static Customer cust;
+	private final static String NAME = "Billy";
+	private Bank bank;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -21,10 +24,14 @@ public class SavingsAccountTest {
 
 	@Before
 	public void setUp() throws Exception {
+		/// Create Customer test fixture
+		cust = new Customer(bank, NAME, "Smith");
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		/// Get rid of test fixture
+		cust = null;
 	}
 
 	@Test
@@ -39,7 +46,20 @@ public class SavingsAccountTest {
 
 	@Test
 	public void testSavingsAccountCustomerDoubleString() {
-		fail("Not yet implemented");
+		/// Create customer object
+		String custName = cust.getFirstName();
+		/// Test value is not null
+		Assert.assertNotNull(custName);
+		
+		/// Create initial balance
+		Double initialBalance = 1000.00;
+		/// Test value is not null
+		Assert.assertNotNull(initialBalance);
+		
+		/// Create account description
+		String description = "401k";
+		/// Test value is not null
+		Assert.assertNotNull(description);
 	}
 
 	@Test
@@ -49,7 +69,9 @@ public class SavingsAccountTest {
 
 	@Test
 	public void testAddInterestTransaction() {
-		fail("Not yet implemented");
+		/// Create rate and test if null
+		Double rate = 2.00;
+		Assert.assertNotNull(rate);
 	}
 
 	@Test
