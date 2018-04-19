@@ -10,6 +10,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TransactionTest {
+	
+	//declare the transaction variable for all of the methods
+	private static Transaction transaction;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -21,115 +24,47 @@ public class TransactionTest {
 
 	@Before
 	public void setUp() throws Exception {
+		//creates the transaction information
+		 transaction = new Transaction(null, 0.00, "");
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testTransaction() {
-		fail("Not yet implemented");
+		//tests the transaction method
+		Transaction transaction = new Transaction(null, 0.00, "");
 	}
 
 	@Test
 	public void testGetId() {
-		fail("Not yet implemented");
+		//checks to see if the getId method works properly
+		assertEquals(transaction.getId(), 1);
 	}
 
 	@Test
 	public void testGetTimestamp() {
-		fail("Not yet implemented");
+		//tests to make sure the timestamp is not null
+		assertNotNull(transaction.getTimestamp());
 	}
 
 	@Test
 	public void testGetType() {
-		fail("Not yet implemented");
+		//checks to see if the getType method works properly
+		assertEquals(transaction.getType(), null);
 	}
 
 	@Test
 	public void testGetAmount() {
-		fail("Not yet implemented");
+		//checks to see if the getAmount returns the proper value
+		assertEquals(transaction.getAmount(), 0.00);
 	}
 
 	@Test
 	public void testGetDescription() {
-		fail("Not yet implemented");
+		//checks to see if the getDescription displays the description of the transaction
+		assertEquals(null, transaction.getDescription());
 	}
-
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEqualsObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testCompareTo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetClass() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testEqualsObject1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testToString1() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testFinalize() {
-		fail("Not yet implemented");
-	}
-
 }
